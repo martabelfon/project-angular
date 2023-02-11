@@ -13,4 +13,9 @@ export class ApiService {
     return this.http.get(url);
   }
 
-}
+  postFormulary(info: any){
+    return this.http.post('http://localhost:3000/documentation', info);
+   }
+   
+};
+
