@@ -1,10 +1,20 @@
+import { IStructure } from './../interfaces/istructure';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class ApiService { 
+
+  formulary: IStructure = {
+    id:0,
+    img: "",
+    title: "",
+    author: "",
+    description: "",
+    url: ""
+  }
 
   constructor(private http:HttpClient) { }
 
@@ -13,9 +23,9 @@ export class ApiService {
     return this.http.get(url);
   }
 
-  postFormulary(info: any){
-    return this.http.post('http://localhost:3000/documentation', info);
-   }
+  postFormulary(formulary: IStructure){
+    return this.http.post('http://localhost:3000/css-tutorials-videos', formulary);
+  }
    
 };
 
