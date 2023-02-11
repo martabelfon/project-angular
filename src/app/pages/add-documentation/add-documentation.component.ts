@@ -1,6 +1,7 @@
+import { IStructure } from './../../shared/interfaces/istructure';
 import { ApiService } from './../../shared/services/api.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,8 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-documentation.component.scss'],
 })
 export class AddDocumentationComponent implements OnInit {
-  addForm!: any;
-  formulary!: any;
+  addForm!: FormGroup;
+  formulary!: IStructure;
   submited: boolean = false;
 
   constructor(
@@ -21,20 +22,25 @@ export class AddDocumentationComponent implements OnInit {
 
   ngOnInit(): void {
     this.addForm = this.form.group({
-      img: ['', [Validators.required, Validators.minLength(10)]],
+      img: [''],
       title: ['', [Validators.required, Validators.minLength(5)]],
       author: ['', [Validators.required, Validators.minLength(2)]],
       description: ['', [Validators.required]],
       url: ['', [Validators.required, Validators.minLength(10)]],
     });
-    this.addForm.valueChanges.subscribe((data: any) => {
+
+    this.addForm.valueChanges.subscribe((data) => {
       this.formulary = data;
     });
+
   }
+
+
+
   addFormulary() {
     this.submited = true;
     if (this.addForm.valid) {
-      let newForm: any = this.formulary;
+      let newForm: IStructure = this.formulary;
       console.log(newForm)
       this.api.postFormulary(newForm).subscribe((res) => {
         console.log(res);
