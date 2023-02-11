@@ -1,0 +1,10 @@
+<div class="container">
+  <form [formGroup]="addForm" (ngSubmit)="addFormulary()">
+    <p>Imagen</p><input type="text" formControlName="img"/>
+    <p>Título</p><input type="text" formControlName="title"/>
+    <p>Autor</p><input type="text" formControlName="author"/>
+    <p>descripción</p><input type="text" formControlName="description"/>
+    <p>url</p><input type="text" formControlName="url"/>
+    <button>Crear</button>
+  </form>
+</div>
