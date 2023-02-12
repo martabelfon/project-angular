@@ -1,0 +1,168 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 90vh;
+  background-color: rgb(90, 90, 90);
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 0 100px 0;
+}
+.container-button {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  border-bottom: 3px solid #95C11E;
+  margin-bottom: 30px;
+}
+.container-cards {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 300px;
+  min-width: 300px;
+  height: 400px;
+  background-color: rgb(114, 114, 114);
+  border-radius: 20px;
+  overflow: scroll;
+  position: relative;
+  padding: 1.8rem;
+  transition: 0.5s ease-out;
+}
+.card-details {
+  height: 100%;
+  gap: 0.5em;
+  display: grid;
+  place-content: center;
+}
+.card-video {
+  width: 300px;
+  padding: 10px 10px 0 10px;
+}
+.card-img {
+  width: 300px;
+  padding: 10px 10px 0 10px;
+}
+.card-title {
+  text-align: center;
+  padding-top: 10px;
+  color: #95C11E;
+}
+.card-authortag {
+  display: flex;
+  flex-direction: row;
+}
+.card-author {
+  padding: 0 10px 0 10px;
+}
+.card-tag {
+  text-align: center;
+  padding: 0 10px 0 10px;
+}
+.card-description {
+  width: 90%;
+  text-align: justify;
+}
+.card-url {
+  padding: 5px 0 10px 0;
+}
+.card-button {
+  transform: translate(-50%, 125%);
+  width: 60%;
+  border-radius: 1rem;
+  border: none;
+  background-color: #95C11E;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+
+.card:hover {
+  border-color: #008bf8;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card:hover .card-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
+
+iframe {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #95C11E;
+  --fs-size: 0.875em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}/*# sourceMappingURL=documentation.component.css.map */
