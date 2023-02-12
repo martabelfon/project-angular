@@ -1,1 +1,19 @@
-<p>footer works!</p>
+<ng-template [ngIf]="favorites">
+  <div class="footer">
+    <div class="footer-link">
+      <div *ngFor="let element of favorites" >
+        <a href="{{ element.url }}" target="_blank"
+          ><img
+            class="footer-img"
+            src="{{ element.icon }}"
+            alt="{{ element.title }}"
+        /></a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p class="footer-copy_copyright">
+        © 2023 Upgrade HUB Students All Rights Reserved
+      </p>
+    </div>
+  </div>
+</ng-template>
