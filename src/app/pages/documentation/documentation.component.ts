@@ -13,7 +13,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class DocumentationComponent implements OnInit{
 
   apiInfo! : any;
-  sections: string[] = ["html", "css", "js"];
   html! :any;
   showHtml: boolean = false;
   css!: any;
@@ -21,6 +20,7 @@ export class DocumentationComponent implements OnInit{
   js!: any;
   showJs: boolean = false;
   showDelete: boolean = false;
+  endPoint!: string;
   baseUrl: string = `http://localhost:3000/`;
   
 
@@ -49,16 +49,21 @@ export class DocumentationComponent implements OnInit{
  
     if (url === null) {
         return '';
+    } else if (url.includes("youtube")) {
+      results = url.match('[\\?&]v=([^&#]*)');
+      video   = (results === null) ? url : results[1];
+  
+      return this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + video);  
+
+    } else {
+      return url
     }
-    results = url.match('[\\?&]v=([^&#]*)');
-    video   = (results === null) ? url : results[1];
- 
-    return this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + video);   
   }
 
   deleteArticle(id:number){
     console.log(id)
-    this.api.deleteFormulary(id).subscribe((data) => {
+    this.setEndPoint();
+    this.api.deleteFormulary(id, this.endPoint).subscribe((data) => {
       this.ngOnInit();
       this.router.navigate(["/documentation"])
     })
@@ -83,5 +88,11 @@ export class DocumentationComponent implements OnInit{
   }
   switchDelete(){
     this.showDelete = !this.showDelete
+  }
+
+  setEndPoint(){
+    if (this.showHtml) this.endPoint = "html"
+    if (this.showCss) this.endPoint = "css"
+    if (this.showJs) this.endPoint = "js"
   }
 }
