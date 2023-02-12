@@ -1,55 +1,8 @@
 <div class="container" *ngIf="apiInfo">
-    <div *ngFor="let info of apiInfo.documentation">
-        <p>{{info.author}}</p>
-        <p>{{info.description}}</p>
+    <div *ngFor="let info of apiInfo">
+        <img src={{info.img}} alt={{info.title}} *ngIf="info.img">
+        <h3>{{info.title}}</h3><span>{{info.author}}</span>
+        <p>{{info.tag}}</p><span>{{info.description}}</span>
         <a href={{info.url}} target="_blank">Enlace a web</a>
     </div>
-    <div *ngFor="let info of apiInfo.tutorials.videos">
-            <div> 
-                <p>{{info.title}}</p>
-                <p>{{info.author}}</p>
-                <p>{{info.description}}</p>
-                <iframe width="560" height="315" [src]="getVideoIframe('https://www.youtube.com/watch?v=Bpyl59_fjvU&ab_channel=midudev')" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-    </div>
-    <div *ngFor="let info of apiInfo.tutorials.text">
-        <div> 
-           <img src={{info.img}} alt={{info.author}}/>
-            <p>{{info.title}}</p>
-            <p>{{info.author}}</p>
-            <p>{{info.description}}</p>
-            <a href={{info.url}} target="_blank">Enlace a web</a>
-        </div>
-    </div> 
-    <div *ngFor="let info of apiInfo.resources">
-        <div> 
-           <img src={{info.img}} alt={{info.author}}/>
-            <p>{{info.title}}</p>
-            <p>{{info.author}}</p>
-            <p>{{info.description}}</p>
-            <a href={{info.url}} target="_blank">Enlace a web</a>
-        </div>
-    </div> <div *ngFor="let info of apiInfo.library">
-        <div> 
-           <img src={{info.img}} alt={{info.author}}/>
-            <p>{{info.title}}</p>
-            <p>{{info.author}}</p>
-            <p>{{info.description}}</p>
-            <a href={{info.url}} target="_blank">Enlace a web</a>
-        </div>
-    </div> 
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
