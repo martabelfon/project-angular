@@ -7,16 +7,6 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService { 
 
-  formulary: IStructure = {
-    id:0,
-    img: "",
-    title: "",
-    author: "",
-    description: "",
-    url: "",
-    tag: "",
-  }
-
   constructor(private http:HttpClient) { }
 
 
@@ -25,8 +15,11 @@ export class ApiService {
   }
 
   postFormulary(formulary: IStructure){
-    return this.http.post('http://localhost:3000/css-tutorials-videos', formulary);
+    return this.http.post('http://localhost:3000/html', formulary);
   }
    
+  deleteFormulary(id: number){
+    return this.http.delete(`http://localhost:3000/html/${id}`);
+  }
 };
 

@@ -13,6 +13,7 @@ export class AddDocumentationComponent implements OnInit {
   addForm!: FormGroup;
   formulary!: IStructure;
   submited: boolean = false;
+  endpoint: string = "";
 
   constructor(
     private form: FormBuilder,
@@ -26,7 +27,8 @@ export class AddDocumentationComponent implements OnInit {
       title: ['', [Validators.required, Validators.minLength(5)]],
       author: ['', [Validators.required, Validators.minLength(2)]],
       description: ['', [Validators.required]],
-      url: ['', [Validators.required, Validators.minLength(10)]],
+      url: [''],
+      video: [''],
       tag: ['', [Validators.required, Validators.minLength(2)]],
     });
 

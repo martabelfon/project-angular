@@ -1,0 +1,8 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  min-height: 80px;
+  color: black;
+}/*# sourceMappingURL=navbar.component.css.map */
