@@ -1,23 +1,29 @@
 <div class="container">
-  <select name="" id="">
-    <option value="html">HTML</option>
+  <select name="selector" #selector [(ngModel)]="endPoint" (ngModelChange)="print($event)">
+    <option value="html" selected>HTML</option>
     <option value="css">CSS</option>
     <option value="js">JavaScript</option>
   </select>
   <form [formGroup]="addForm" (ngSubmit)="addFormulary()">
-    <p>Etiqueta</p><select name="tag" id="tag" formControlName="tag">
-      <option selected value="documentation">Documentación</option>
+    <p>Etiqueta</p><select name="tag" #tag formControlName="tag">
+      <option value="documentation" selected>Documentación</option>
       <option value="videotutorial">Tutorial de Vídeo</option>
       <option value="texttutorial">Tutorial de Texto</option>
       <option value="resources">Recursos</option>
       <option value="library">Librería</option>
     </select>
-    <p>Imagen</p><input type="text" formControlName="img"/>
+    <div *ngIf="tag.value !== 'videotutorial'">
+      <p>Imagen</p><input type="text" formControlName="img"/>
+    </div>
     <p>Título</p><input type="text" formControlName="title"/>
     <p>Autor</p><input type="text" formControlName="author"/>
     <p>descripción</p><input type="text" formControlName="description"/>
-    <p>video</p><input type="text" formControlName="video"/>
-    <p>url</p><input type="text" formControlName="url"/>
+    <div *ngIf="tag.value === 'videotutorial'">
+      <p>video</p><input type="text" formControlName="video"/>
+    </div>
+    <div *ngIf="tag.value !== 'videotutorial'">
+      <p>url</p><input type="text" formControlName="url"/>
+    </div>
     <button>Crear</button>
   </form>
 </div>
