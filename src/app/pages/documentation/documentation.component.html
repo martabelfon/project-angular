@@ -1,8 +1,74 @@
-<div class="container" *ngIf="apiInfo">
-    <div *ngFor="let info of apiInfo">
-        <img src={{info.img}} alt={{info.title}} *ngIf="info.img">
-        <h3>{{info.title}}</h3><span>{{info.author}}</span>
-        <p>{{info.tag}}</p><span>{{info.description}}</span>
-        <a href={{info.url}} target="_blank">Enlace a web</a>
+<div class="container" *ngIf="html && css && js">
+  
+
+<button type="button" (click)="switchHtml()">HTML</button>
+<button type="button" (click)="switchCss()">CSS</button>
+<button type="button" (click)="switchJs()">JavaScript</button>
+<button type="button" (click)="switchDelete()">Borrar Elementos</button>
+
+
+<ng-template [ngIf]="showHtml">
+    <div *ngFor="let info of html" id={{info.id}}>
+        <img src="{{ info.img }}" alt="{{ info.title }}" *ngIf="info.img" />
+        <h3>{{ info.title }}</h3>
+        <span>{{ info.author }}</span>
+        <p>{{ info.tag }}</p>
+        <span>{{ info.description }}</span>
+        <p><a href="{{ info.url }}" target="_blank" *ngIf="info.url">Enlace a web</a></p>
+        <div><iframe
+        width="300"
+        height="200"
+        [src]="getVideoIframe(info.video)"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        *ngIf="info.video"
+        ></iframe></div>
+        <button type="button" (click)="deleteArticle(info.id)" *ngIf="showDelete">BORRAR</button>
     </div>
+</ng-template>
+
+<ng-template [ngIf]="showCss">
+    <div *ngFor="let info of css">
+        <img src="{{ info.img }}" alt="{{ info.title }}" *ngIf="info.img" />
+        <h3>{{ info.title }}</h3>
+        <span>{{ info.author }}</span>
+        <p>{{ info.tag }}</p>
+        <span>{{ info.description }}</span>
+        <p><a href="{{ info.url }}" target="_blank" *ngIf="info.url">Enlace a web</a></p>
+        <div><iframe
+        width="300"
+        height="200"
+        [src]="getVideoIframe(info.video)"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        *ngIf="info.video"
+        ></iframe></div>
+        <button type="button" (click)="deleteArticle(info.id)" *ngIf="showDelete">BORRAR</button>
+    </div>
+</ng-template>
+
+<ng-template [ngIf]="showJs">
+    <div *ngFor="let info of js">
+        <img src="{{ info.img }}" alt="{{ info.title }}" *ngIf="info.img" />
+        <h3>{{ info.title }}</h3>
+        <span>{{ info.author }}</span>
+        <p>{{ info.tag }}</p>
+        <span>{{ info.description }}</span>
+        <p><a href="{{ info.url }}" target="_blank" *ngIf="info.url">Enlace a web</a></p>
+        <div><iframe
+        width="300"
+        height="200"
+        [src]="getVideoIframe(info.video)"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        *ngIf="info.video"
+        ></iframe></div>
+        <button type="button" (click)="deleteArticle(info.id)" *ngIf="showDelete">BORRAR</button>
+    </div>
+</ng-template>
+
+
 </div>

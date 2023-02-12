@@ -1,10 +1,23 @@
-<!-- <div class="container"> -->
+<div class="container">
+  <select name="" id="">
+    <option value="html">HTML</option>
+    <option value="css">CSS</option>
+    <option value="js">JavaScript</option>
+  </select>
   <form [formGroup]="addForm" (ngSubmit)="addFormulary()">
+    <p>Etiqueta</p><select name="tag" id="tag" formControlName="tag">
+      <option selected value="documentation">Documentación</option>
+      <option value="videotutorial">Tutorial de Vídeo</option>
+      <option value="texttutorial">Tutorial de Texto</option>
+      <option value="resources">Recursos</option>
+      <option value="library">Librería</option>
+    </select>
     <p>Imagen</p><input type="text" formControlName="img"/>
     <p>Título</p><input type="text" formControlName="title"/>
     <p>Autor</p><input type="text" formControlName="author"/>
     <p>descripción</p><input type="text" formControlName="description"/>
+    <p>video</p><input type="text" formControlName="video"/>
     <p>url</p><input type="text" formControlName="url"/>
     <button>Crear</button>
   </form>
-<!-- </div> -->
+</div>
