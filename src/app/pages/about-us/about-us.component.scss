@@ -1,0 +1,76 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+.aboutBlock {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+.aboutContainer {
+  width: 90%;
+  display: flex;
+  
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  border-width: 9px;
+  border-color: rgb(209, 209, 209);
+  border-style: solid;
+  padding: 10px;
+
+  &-card {
+    
+    width: 98%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    grid-gap: 30px;
+    padding-top: 30px;
+
+    &_image {
+      width: 20%;
+     
+      img {
+        width: 100%;
+
+       
+      }
+
+      &__icons{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        
+
+        a img{
+            width: 40px;
+            text-align: center;
+        }
+      }
+    }
+
+
+    &_description {
+      
+      width: 60%;
+      padding: 30px;
+      border-left: 10px;
+      border-color: #95C11E;
+      border-style: solid;
+      height: 300px;
+      overflow-y: scroll;
+      
+
+      &__icons{
+        width: 100%;
+        
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+    }
+  }
+}
