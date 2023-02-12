@@ -8,13 +8,15 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddDocumentationComponent } from './pages/add-documentation/add-documentation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    AddDocumentationComponent
   ],
   imports: [
     HttpClientModule,
