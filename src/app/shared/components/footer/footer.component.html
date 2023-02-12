@@ -1,5 +1,19 @@
-<div class="footer">
+<ng-template [ngIf]="favorites">
+  <div class="footer">
     <div class="footer-link">
-      <img routerLink="/"  class="footer-logo" src=""/>
+      <div *ngFor="let element of favorites" >
+        <a href="{{ element.url }}" target="_blank"
+          ><img
+            class="footer-img"
+            src="{{ element.icon }}"
+            alt="{{ element.title }}"
+        /></a>
+      </div>
     </div>
-</div>
+    <div class="footer-copy">
+      <p class="footer-copy_copyright">
+        © 2023 Upgrade HUB Students All Rights Reserved
+      </p>
+    </div>
+  </div>
+</ng-template>

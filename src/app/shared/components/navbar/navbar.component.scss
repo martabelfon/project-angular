@@ -10,11 +10,14 @@
     height: auto;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 3px solid #95C11E;
     background-color: black;
+    margin-bottom: 16px;
 
     &-link {
     display: flex;
     height: 80px;
+    font-weight: 400;
     color: whitesmoke;
     gap: 20px;
     margin-right: 26px;
