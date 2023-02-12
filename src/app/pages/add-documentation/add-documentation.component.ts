@@ -13,7 +13,7 @@ export class AddDocumentationComponent implements OnInit {
   addForm!: FormGroup;
   formulary!: IStructure;
   submited: boolean = false;
-  endpoint: string = "";
+  endPoint: string = "html";
 
   constructor(
     private form: FormBuilder,
@@ -29,7 +29,7 @@ export class AddDocumentationComponent implements OnInit {
       description: ['', [Validators.required]],
       url: [''],
       video: [''],
-      tag: ['', [Validators.required, Validators.minLength(2)]],
+      tag: ['documentation', [Validators.required, Validators.minLength(2)]],
     });
 
     this.addForm.valueChanges.subscribe((data) => {
@@ -45,12 +45,16 @@ export class AddDocumentationComponent implements OnInit {
     if (this.addForm.valid) {
       let newForm: IStructure = this.formulary;
       console.log(newForm)
-      this.api.postFormulary(newForm).subscribe((res) => {
+      this.api.postFormulary(newForm,this.endPoint).subscribe((res) => {
         console.log(res);
         this.addForm.reset();
         this.submited = false;
         this.route.navigate(["/documentation"])
       });
     }
+  }
+
+  print(variable:any){
+    console.log(variable)
   }
 }
