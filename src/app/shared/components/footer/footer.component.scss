@@ -1,0 +1,46 @@
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px solid #95C11E;
+    background-color: black;
+    margin-top: 20px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+
+    &-link {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    &-img {
+      width: 20px;
+      filter: grayscale(1);
+      transition: all 0.5;
+
+      &:hover {
+        filter: grayscale(0);
+        scale: 1.1;
+        transition: all 0.5;
+      }
+    }
+
+  &-copy {
+    display: flex;
+
+    &_copyright {
+      display: flex;
+      font-size: 9px;
+      color: rgb(135, 135, 135)
+    }
+  }
+}
+
+

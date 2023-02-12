@@ -14,12 +14,12 @@ export class ApiService {
     return this.http.get(url);
   }
 
-  postFormulary(formulary: IStructure){
-    return this.http.post('http://localhost:3000/html', formulary);
+  postFormulary(formulary: IStructure, endPoint:string){
+    return this.http.post(`http://localhost:3000/${endPoint}`, formulary);
   }
    
-  deleteFormulary(id: number){
-    return this.http.delete(`http://localhost:3000/html/${id}`);
+  deleteFormulary(id: number, endPoint:string){
+    return this.http.delete(`http://localhost:3000/${endPoint}/${id}`);
   }
 };
 
