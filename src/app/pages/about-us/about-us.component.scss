@@ -1,49 +1,56 @@
 *{
     font-family: "Poppins", sans-serif;
 }
+
+::-webkit-scrollbar {width: 0px;}
+Track
+::-webkit-scrollbar-track {background: #f1f1f100;}
+Handle
+::-webkit-scrollbar-thumb {background: rgba(136, 136, 136, 0);}
+Handle on hover
+::-webkit-scrollbar-thumb:hover {background: #95C11E;}
+
 .aboutBlock {
   display: flex;
   justify-content: center;
-  padding-top: 30px;
+  background-color: rgb(90, 90, 90);
+  margin-bottom: 40px;
 }
+
+
 .aboutContainer {
-  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 70%;
   display: flex;
-  
-  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   border-radius: 10px;
-  border-width: 9px;
-  border-color: rgb(209, 209, 209);
+  border-width: 3px;
+  border-color: rgba(209, 209, 209, 0);
   border-style: solid;
   padding: 10px;
+  background-color: rgb(114, 114, 114);;
 
   &-card {
-    
-    width: 98%;
-    
+    width: 90%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    grid-gap: 30px;
-    padding-top: 30px;
 
     &_image {
-      width: 20%;
-     
-      img {
-        width: 100%;
+      width: 30%;
 
-       
+      img {
+        width: 200px;
+        overflow-y: scroll;
+        border-color: #95C11E;
+        border-style: solid;
+        border-radius: 10px;
       }
 
       &__icons{
         width: 100%;
         display: flex;
         justify-content: flex-end;
-        
 
         a img{
             width: 40px;
@@ -52,21 +59,17 @@
       }
     }
 
-
     &_description {
-      
-      width: 60%;
-      padding: 30px;
-      border-left: 10px;
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px 10px 10px 10px;
+      height: 200px;
+      overflow-y: scroll;
       border-color: #95C11E;
       border-style: solid;
-      height: 300px;
-      overflow-y: scroll;
-      
 
       &__icons{
         width: 100%;
-        
         display: flex;
         justify-content: flex-end;
         align-items: center;
