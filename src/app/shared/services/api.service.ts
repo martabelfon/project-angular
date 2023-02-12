@@ -13,7 +13,8 @@ export class ApiService {
     title: "",
     author: "",
     description: "",
-    url: ""
+    url: "",
+    tag: "",
   }
 
   constructor(private http:HttpClient) { }

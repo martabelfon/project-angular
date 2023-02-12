@@ -27,6 +27,7 @@ export class AddDocumentationComponent implements OnInit {
       author: ['', [Validators.required, Validators.minLength(2)]],
       description: ['', [Validators.required]],
       url: ['', [Validators.required, Validators.minLength(10)]],
+      tag: ['', [Validators.required, Validators.minLength(2)]],
     });
 
     this.addForm.valueChanges.subscribe((data) => {
