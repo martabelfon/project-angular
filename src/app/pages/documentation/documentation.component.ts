@@ -11,7 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class DocumentationComponent implements OnInit{
 
   apiInfo! : any;
-  url: string = "http://localhost:3000/";
+  url: string = "http://localhost:3000/html";
 
   constructor(private api:ApiService, private _sanitizer: DomSanitizer){ }
 
