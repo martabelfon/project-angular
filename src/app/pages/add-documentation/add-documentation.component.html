@@ -1,23 +1,33 @@
 <div class="container">
-  <select name="" id="">
-    <option value="html">HTML</option>
+  <p class="tag">PLATAFORMA</p>
+  <select name="selector" #selector [(ngModel)]="endPoint" (ngModelChange)="print($event)" class="box">
+    <option value="html" selected>HTML</option>
     <option value="css">CSS</option>
     <option value="js">JavaScript</option>
   </select>
-  <form [formGroup]="addForm" (ngSubmit)="addFormulary()">
-    <p>Etiqueta</p><select name="tag" id="tag" formControlName="tag">
-      <option selected value="documentation">Documentación</option>
+  <form [formGroup]="addForm" (ngSubmit)="addFormulary()" class="formulary">
+    <p  class="tag">ETIQUETA</p><select name="tag" #tag formControlName="tag" class="box">
+      <option value="documentation" selected>Documentación</option>
       <option value="videotutorial">Tutorial de Vídeo</option>
       <option value="texttutorial">Tutorial de Texto</option>
       <option value="resources">Recursos</option>
       <option value="library">Librería</option>
     </select>
-    <p>Imagen</p><input type="text" formControlName="img"/>
-    <p>Título</p><input type="text" formControlName="title"/>
-    <p>Autor</p><input type="text" formControlName="author"/>
-    <p>descripción</p><input type="text" formControlName="description"/>
-    <p>video</p><input type="text" formControlName="video"/>
-    <p>url</p><input type="text" formControlName="url"/>
-    <button>Crear</button>
+    <div *ngIf="tag.value !== 'videotutorial'"  class="tag-container">
+      <p  class="tag">IMAGEN</p><input type="text" formControlName="img"/>
+    </div>
+    <p  class="tag">TÍTULO</p><input type="text" formControlName="title"/>
+    <p  class="tag">AUTOR</p><input type="text" formControlName="author"/>
+    <p  class="tag">DESCRIPCIÓN</p><input type="text" formControlName="description"/>
+    <div *ngIf="tag.value === 'videotutorial'" class="tag-container">
+      <p  class="tag">VIDEO</p><input type="text" formControlName="video"/>
+    </div>
+    <div *ngIf="tag.value !== 'videotutorial'"  class="tag-container">
+      <p  class="tag">URL</p><input type="text" formControlName="url"/>
+    </div>
+    <button data-text="Awesome" class="button">
+      <span class="actual-text">&nbsp;CREAR&nbsp;</span>
+      <span class="hover-text" aria-hidden="true">&nbsp;CREAR&nbsp;</span>
+    </button>
   </form>
 </div>

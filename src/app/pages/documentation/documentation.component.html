@@ -1,74 +1,90 @@
 <div class="container" *ngIf="html && css && js">
-  
-
-<button type="button" (click)="switchHtml()">HTML</button>
-<button type="button" (click)="switchCss()">CSS</button>
-<button type="button" (click)="switchJs()">JavaScript</button>
-<button type="button" (click)="switchDelete()">Borrar Elementos</button>
-
-
-<ng-template [ngIf]="showHtml">
-    <div *ngFor="let info of html" id={{info.id}}>
-        <img src="{{ info.img }}" alt="{{ info.title }}" *ngIf="info.img" />
-        <h3>{{ info.title }}</h3>
-        <span>{{ info.author }}</span>
-        <p>{{ info.tag }}</p>
-        <span>{{ info.description }}</span>
-        <p><a href="{{ info.url }}" target="_blank" *ngIf="info.url">Enlace a web</a></p>
-        <div><iframe
-        width="300"
-        height="200"
-        [src]="getVideoIframe(info.video)"
-        frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        *ngIf="info.video"
-        ></iframe></div>
-        <button type="button" (click)="deleteArticle(info.id)" *ngIf="showDelete">BORRAR</button>
+    <div class="container-button">
+        <button class="button" type="button" (click)="switchHtml()">
+            <span class="actual-text">&nbsp;HTML&nbsp;</span>
+            <span class="hover-text" aria-hidden="true">&nbsp;HTML&nbsp;</span>
+        </button>
+        <button class="button" type="button" (click)="switchCss()">
+            <span class="actual-text">&nbsp;CSS&nbsp;</span>
+            <span class="hover-text" aria-hidden="true">&nbsp;CSS&nbsp;</span>
+        </button>
+        <button class="button" type="button" (click)="switchJs()">
+            <span class="actual-text">&nbsp;JavaScript&nbsp;</span>
+            <span class="hover-text" aria-hidden="true">&nbsp;JavaScript&nbsp;</span>
+        </button>
+        <button class="button" type="button" (click)="switchDelete()">
+            <span class="actual-text">&nbsp;Borrar&nbsp;elementos&nbsp;</span>
+            <span class="hover-text" aria-hidden="true">&nbsp;Borrar&nbsp;elementos&nbsp;</span>
+        </button>
     </div>
-</ng-template>
 
-<ng-template [ngIf]="showCss">
-    <div *ngFor="let info of css">
-        <img src="{{ info.img }}" alt="{{ info.title }}" *ngIf="info.img" />
-        <h3>{{ info.title }}</h3>
-        <span>{{ info.author }}</span>
-        <p>{{ info.tag }}</p>
-        <span>{{ info.description }}</span>
-        <p><a href="{{ info.url }}" target="_blank" *ngIf="info.url">Enlace a web</a></p>
-        <div><iframe
-        width="300"
-        height="200"
-        [src]="getVideoIframe(info.video)"
-        frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        *ngIf="info.video"
-        ></iframe></div>
-        <button type="button" (click)="deleteArticle(info.id)" *ngIf="showDelete">BORRAR</button>
-    </div>
-</ng-template>
+    <ng-template [ngIf]="showHtml">
+        <div class="container-cards">
+            <div class="card" *ngFor="let info of html" id={{info.id}}>
+                <div class="card-details">
+                    <div class="card-video" *ngIf="info.video"><iframe 
+                        [src]="getVideoIframe(info.video)"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        *ngIf="info.video"></iframe></div>
+                    <img class="card-img" src="{{ info.img }}" alt="{{ info.title }}" *ngIf="info.img" />
+                    <h3 class="card-title">{{ info.title }}</h3>
+                    <div class="card-authortag"> 
+                        <span class="card-author">{{ info.author }}</span>
+                        <p class="card-tag">{{ info.tag }}</p>
+                    </div>
+                </div>
+                <span class="card-description">{{ info.description }}</span>
+                <p class="card-url"><a href="{{ info.url }}" target="_blank" *ngIf="info.url">Enlace a web</a></p>
+                <button class="card-button" type="button" (click)="deleteArticle(info.id)" *ngIf="showDelete">BORRAR</button>
+            </div>
+        </div>
+    </ng-template>
 
-<ng-template [ngIf]="showJs">
-    <div *ngFor="let info of js">
-        <img src="{{ info.img }}" alt="{{ info.title }}" *ngIf="info.img" />
-        <h3>{{ info.title }}</h3>
-        <span>{{ info.author }}</span>
-        <p>{{ info.tag }}</p>
-        <span>{{ info.description }}</span>
-        <p><a href="{{ info.url }}" target="_blank" *ngIf="info.url">Enlace a web</a></p>
-        <div><iframe
-        width="300"
-        height="200"
-        [src]="getVideoIframe(info.video)"
-        frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        *ngIf="info.video"
-        ></iframe></div>
-        <button type="button" (click)="deleteArticle(info.id)" *ngIf="showDelete">BORRAR</button>
-    </div>
-</ng-template>
+    <ng-template [ngIf]="showCss">
+        <div class="container-cards">
+            <div class="card" *ngFor="let info of css">
+                <div class="card-video"><iframe
+                    [src]="getVideoIframe(info.video)"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    *ngIf="info.video"></iframe></div>
+                <img class="card-img" src="{{ info.img }}" alt="{{ info.title }}" *ngIf="info.img" />
+                <h3 class="card-title">{{ info.title }}</h3>
+                <div class="card-authortag"> 
+                    <span class="card-author">{{ info.author }}</span>
+                    <p class="card-tag">{{ info.tag }}</p>
+                </div>
+                <span class="card-description">{{ info.description }}</span>
+                <p class="card-url"><a href="{{ info.url }}" target="_blank" *ngIf="info.url">Enlace a web</a></p>
+                <button type="button" (click)="deleteArticle(info.id)" *ngIf="showDelete">BORRAR</button>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template [ngIf]="showJs">
+        <div class="container-cards">
+            <div class="card" *ngFor="let info of js">
+                <div class="card-video"><iframe
+                    [src]="getVideoIframe(info.video)"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    *ngIf="info.video"></iframe></div>
+                <img class="card-img" src="{{ info.img }}" alt="{{ info.title }}" *ngIf="info.img" />
+                <h3 class="card-title">{{ info.title }}</h3>
+                <div class="card-authortag"> 
+                    <span class="card-author">{{ info.author }}</span>
+                    <p class="card-tag">{{ info.tag }}</p>
+                </div>
+                <span class="card-description">{{ info.description }}</span>
+                <p class="card-url"><a href="{{ info.url }}" target="_blank" *ngIf="info.url">Enlace a web</a></p>
+                <button type="button" (click)="deleteArticle(info.id)" *ngIf="showDelete">BORRAR</button>
+            </div>
+        </div>
+    </ng-template>
 
 
 </div>
