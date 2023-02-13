@@ -1,12 +1,14 @@
 *{
     font-family: "Poppins", sans-serif;
-    color: #abd1c6;
+    color: white;
 }
 
 .homeBlock{
+    padding-top: 100px;
+    padding-bottom: 100px;
     display: flex;
     justify-content: center;
-    background-color: #004643;
+    background-color: rgb(90, 90, 90);;
 }
 
 .homeContainer{
@@ -20,9 +22,10 @@
 
     &-title{
 
-        background-color: green;
+        background-color:rgb(149,193,30);
         border-radius: 70px;
         padding: 10px;
+        
         
         
 
@@ -30,7 +33,7 @@
 
     &-introduction{
         width: 40%;
-        background-color: grey;
+        background-color:rgb(114, 114, 114);;
         display: flex;
         justify-content: flex-end;
         border-radius: 20px;
@@ -42,6 +45,7 @@
         p{
             width: 70%;
             padding: 10px;
+            color: #abd1c6;
         }
 
         img{
@@ -53,7 +57,7 @@
 
     &-paragraph2{
         width: 40%;
-        background-color: grey;
+        background-color:rgb(114, 114, 114);;
         display: flex;
         justify-content: flex-end;
         border-radius: 20px;
@@ -64,6 +68,7 @@
         p{
             width: 70%;
             padding: 10px;
+            color: #abd1c6;
         }
 
         img{
@@ -74,7 +79,7 @@
 
     &-paragraph{
         width: 40%;
-        background-color: grey;
+        background-color:rgb(114, 114, 114);;
         display: flex;
         justify-content: flex-end;
         border-radius: 20px;
@@ -85,6 +90,7 @@
         p{
             width: 70%;
             padding: 10px;
+            color: #abd1c6;
         }
 
         img{

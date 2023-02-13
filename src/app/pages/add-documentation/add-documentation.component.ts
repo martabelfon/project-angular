@@ -29,7 +29,7 @@ export class AddDocumentationComponent implements OnInit {
       description: ['', [Validators.required]],
       url: [''],
       video: [''],
-      tag: ['documentation', [Validators.required, Validators.minLength(2)]],
+      tag: ['', [Validators.required, Validators.minLength(2)]],
     });
 
     this.addForm.valueChanges.subscribe((data) => {
