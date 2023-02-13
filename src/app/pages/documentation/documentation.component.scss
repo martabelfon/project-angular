@@ -55,6 +55,14 @@
         border: 3px solid #95C11E;
     }
 
+    &-details {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     &-video {
         width: 300px;
         padding: 10px 10px 0 10px;
@@ -74,8 +82,13 @@
     }
 
     &-authortag{
+        width: 95%;
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        color: #b6b6b6;
     }
 
     &-author {
@@ -89,9 +102,12 @@
 
     &-description {
         width: 90%;
-        max-height: 300px;
+        max-height: 280px;
         text-align: justify;
         overflow-y: scroll;
+        margin-bottom: 20px;
+        font-size: 12px;
+        padding-top: 20px;
     }
 
     &-url {

@@ -44,7 +44,7 @@
 
     <ng-template [ngIf]="showCss">
         <div class="container-cards">
-            <div class="card" *ngFor="let info of html" id={{info.id}}>
+            <div class="card" *ngFor="let info of css" id={{info.id}}>
                 <div class="card-details">
                     <div class="card-video" *ngIf="info.video"><iframe 
                         [src]="getVideoIframe(info.video)"
@@ -68,7 +68,7 @@
 
     <ng-template [ngIf]="showJs">
         <div class="container-cards">
-            <div class="card" *ngFor="let info of html" id={{info.id}}>
+            <div class="card" *ngFor="let info of js" id={{info.id}}>
                 <div class="card-details">
                     <div class="card-video" *ngIf="info.video"><iframe 
                         [src]="getVideoIframe(info.video)"
