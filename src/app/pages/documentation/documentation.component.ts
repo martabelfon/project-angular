@@ -14,7 +14,7 @@ export class DocumentationComponent implements OnInit{
 
   apiInfo! : any;
   html! :any;
-  showHtml: boolean = false;
+  showHtml: boolean = true;
   css!: any;
   showCss: boolean = false;
   js!: any;
